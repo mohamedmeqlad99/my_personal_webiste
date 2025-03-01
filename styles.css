@@ -1,129 +1,158 @@
-/* Modern Portfolio Styles */
-
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
+/* Base styles */
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #343a40;
-    --background-color: #f8f9fa;
-    --text-color: #212529;
-    --accent-color: #17a2b8;
-}
-
-/* Dark Mode */
-.dark-mode {
-    --background-color: #1e1e1e;
-    --text-color: #f8f9fa;
-    --secondary-color: #495057;
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --accent-color: #4a9eff;
+    --header-bg: #1a1a1a;
+    --container-bg: #1e1e1e;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: var(--background-color);
-    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    transition: background 0.3s, color 0.3s;
-}
-
-header {
-    background: var(--secondary-color);
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    background: var(--primary-color);
-    padding: 10px 0;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 8px 16px;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    background: var(--accent-color);
-    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .container {
-    max-width: 900px;
-    margin: auto;
+    max-width: 1200px;
+    margin: 20px auto;
     padding: 20px;
+    background-color: var(--container-bg);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-h1, h2 {
-    color: var(--primary-color);
+header {
+    background-color: var(--header-bg);
+    color: var(--text-color);
+    padding: 1rem;
+    text-align: center;
+    position: relative;
 }
 
-.card {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--header-bg);
+    color: var(--text-color);
+    margin-top: 20px;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Profile section */
+.profile {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-color);
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    font-size: 1.8rem;
+    margin: 0 10px;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Dark mode toggle */
+.theme-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Light mode styles */
+.light-mode {
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --accent-color: #0066cc;
+    --header-bg: #e0e0e0;
+    --container-bg: #ffffff;
+}
+
+/* Additional styles */
+.medium-link {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.medium-link a {
+    display: inline-block;
+    padding: 20px;
+    border-radius: 8px;
     transition: transform 0.3s ease;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background: var(--primary-color);
-    color: white;
+.medium-link a:hover {
+    transform: scale(1.05);
     text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
 }
 
-.button:hover {
-    background: var(--accent-color);
+.medium-link i {
+    margin-bottom: 10px;
 }
 
-/* Dark Mode Toggle */
-.toggle-container {
-    text-align: center;
-    margin: 10px 0;
+ul {
+    padding-left: 20px;
 }
 
-.toggle-btn {
-    background: var(--primary-color);
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+section {
+    margin-bottom: 30px;
 }
 
-.toggle-btn:hover {
-    background: var(--accent-color);
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-    nav a {
-        display: block;
-        padding: 10px;
-    }
+h2 {
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 10px;
 }
