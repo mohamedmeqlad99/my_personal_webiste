@@ -13,6 +13,11 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--bg-color);
+    background-image: url('wallpaper');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: var(--text-color);
 }
 
@@ -20,17 +25,18 @@ body {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
-    background-color: var(--container-bg);
+    background-color: rgba(30, 30, 30, 0.85);
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 header {
-    background-color: var(--header-bg);
+    background-color: rgba(26, 26, 26, 0.9);
     color: var(--text-color);
     padding: 1rem;
     text-align: center;
     position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 nav ul {
@@ -57,9 +63,10 @@ nav ul li a:hover {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: var(--header-bg);
+    background-color: rgba(26, 26, 26, 0.9);
     color: var(--text-color);
     margin-top: 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
 }
 
 a {
@@ -83,6 +90,7 @@ a:hover {
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid var(--accent-color);
+    box-shadow: 0 0 15px rgba(74, 158, 255, 0.5);
 }
 
 .social-icons {
@@ -115,11 +123,11 @@ a:hover {
 
 /* Light mode styles */
 .light-mode {
-    --bg-color: #f5f5f5;
+    --bg-color: rgba(245, 245, 245, 0.3);
     --text-color: #333;
     --accent-color: #0066cc;
-    --header-bg: #e0e0e0;
-    --container-bg: #ffffff;
+    --header-bg: rgba(224, 224, 224, 0.9);
+    --container-bg: rgba(255, 255, 255, 0.85);
 }
 
 /* Additional styles */
@@ -133,15 +141,18 @@ a:hover {
     padding: 20px;
     border-radius: 8px;
     transition: transform 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .medium-link a:hover {
     transform: scale(1.05);
     text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .medium-link i {
     margin-bottom: 10px;
+    font-size: 4rem;
 }
 
 ul {
@@ -155,4 +166,416 @@ section {
 h2 {
     border-bottom: 1px solid var(--accent-color);
     padding-bottom: 10px;
+}
+
+/* Project and certification items */
+.container ul li {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.container ul li:hover {
+    transform: translateX(5px);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.container ul li h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+}
+
+/* Timeline styles */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Vertical line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--accent-color);
+    top: 0;
+    bottom: 0;
+    left: 30%;
+    margin-left: -2px;
+    opacity: 0.7;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    display: flex;
+}
+
+.timeline-left {
+    width: 30%;
+    padding-right: 30px;
+    text-align: right;
+}
+
+.timeline-right {
+    width: 70%;
+    padding-left: 30px;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 30%;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    margin-left: -10px;
+    z-index: 1;
+}
+
+.company {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.date {
+    font-style: italic;
+    opacity: 0.8;
+    font-size: 0.9em;
+}
+
+.timeline-right ul {
+    margin-top: 10px;
+}
+
+.timeline-right li {
+    margin-bottom: 8px;
+}
+
+.timeline h3 {
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+/* Fix for timeline list items to override the general container list styles */
+.timeline-right ul li {
+    background-color: transparent;
+    padding: 0;
+    transform: none;
+    transition: none;
+    margin-bottom: 8px;
+}
+
+.timeline-right ul li:hover {
+    transform: none;
+    background-color: transparent;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+    }
+    
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    /* Timeline responsive */
+    .timeline::after {
+        left: 20px;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+    }
+    
+    .timeline-left {
+        width: 100%;
+        text-align: left;
+        padding-left: 50px;
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .timeline-right {
+        width: 100%;
+        padding-left: 50px;
+    }
+    
+    .timeline-dot {
+        left: 20px;
+    }
+}
+
+/* Terminal style for Currently Working On section - with adjusted colors */
+.current-work {
+    margin: 40px 0;
+}
+
+.terminal {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(20, 20, 30, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-family: 'Courier New', monospace;
+    border: 1px solid rgba(74, 158, 255, 0.2);
+}
+
+.terminal-header {
+    background-color: rgba(30, 30, 40, 0.9);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(74, 158, 255, 0.2);
+}
+
+.terminal-buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: 15px;
+}
+
+.terminal-close,
+.terminal-minimize,
+.terminal-maximize {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.terminal-close {
+    background-color: #FF5F57;
+}
+
+.terminal-minimize {
+    background-color: #FEBC2E;
+}
+
+.terminal-maximize {
+    background-color: #28C840;
+}
+
+.terminal-title {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-left: auto;
+}
+
+.terminal-body {
+    padding: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+.command-line {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.prompt {
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+.command {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.command-output {
+    margin: 10px 0 20px 0;
+    padding-left: 10px;
+}
+
+.project-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.project-item:hover {
+    background-color: rgba(74, 158, 255, 0.1);
+}
+
+.project-progress {
+    width: 80px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--accent-color);
+    border-radius: 4px;
+}
+
+.project-name {
+    color: var(--accent-color);
+    margin-right: 15px;
+    font-weight: bold;
+    width: 200px;
+}
+
+.project-desc {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    flex: 1;
+}
+
+/* Blinking cursor animation */
+.blink {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Modern Skill Clusters */
+.skill-clusters {
+    margin-top: 30px;
+}
+
+.skill-category {
+    margin-bottom: 25px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgba(74, 158, 255, 0.1);
+}
+
+.skill-category h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-category h3 i {
+    font-size: 1.2em;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    background-color: rgba(74, 158, 255, 0.2);
+    color: var(--text-color);
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(74, 158, 255, 0.5);
+}
+
+/* Light mode adjustments */
+.light-mode .terminal {
+    background-color: rgba(240, 240, 245, 0.9);
+    border: 1px solid rgba(0, 102, 204, 0.2);
+}
+
+.light-mode .terminal-header {
+    background-color: rgba(220, 220, 230, 0.9);
+    border-bottom: 1px solid rgba(0, 102, 204, 0.2);
+}
+
+.light-mode .terminal-title {
+    color: rgba(50, 50, 50, 0.8);
+}
+
+.light-mode .terminal-body {
+    color: rgba(50, 50, 50, 0.9);
+}
+
+.light-mode .prompt {
+    color: var(--accent-color);
+}
+
+.light-mode .command {
+    color: rgba(50, 50, 50, 0.9);
+}
+
+.light-mode .project-item:hover {
+    background-color: rgba(0, 102, 204, 0.1);
+}
+
+.light-mode .project-name {
+    color: var(--accent-color);
+}
+
+.light-mode .project-desc {
+    color: rgba(50, 50, 50, 0.8);
+}
+
+.light-mode .skill-tag {
+    background-color: rgba(0, 102, 204, 0.1);
+}
+
+.light-mode .skill-tag:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .project-progress {
+        margin-bottom: 10px;
+    }
+    
+    .project-name {
+        margin-bottom: 5px;
+        width: auto;
+    }
+    
+    .skill-tags {
+        gap: 8px;
+    }
+    
+    .skill-tag {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
 }
