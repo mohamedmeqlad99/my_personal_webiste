@@ -602,3 +602,38 @@ h2 {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
+/* Projects list */
+.projects-list {
+    list-style: none;
+    padding: 0;
+}
+
+.projects-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.project-image {
+    width: 100%; /* Adjust as needed */
+    max-width: 600px; /* Increase this value to make it larger */
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.projects-list a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.projects-list a:hover {
+    color: var(--text-color);
+}
